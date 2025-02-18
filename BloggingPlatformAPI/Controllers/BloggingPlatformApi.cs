@@ -113,7 +113,7 @@ namespace BloggingPlatformAPI.Controllers
                     post.UpdatedAt = DateTime.Now;
 
                     _db.BlogPost.Update(post);
-                    _db.SaveChanges();
+                    await _db.SaveChangesAsync();
 
                     return CreatedAtRoute("GetPostById", new {Id = id} , post);
                 }
